@@ -200,26 +200,90 @@ int main()
 6.	Write a C++ program to pass an array containing age of person to a function. 
 This function should find average age and display the average age in main function.
 */
+
+
+/*
+7.	Write a program that asks for an index and a number. Then it includes the number 
+at the indicated index of the array ={1,2,3,4,5,6} and moves a position forward 
+(from u to u+1) each element after the selected index.
+*/
+
 //Pointer Exercise
-//7.	Write block of code that take an input from the user and display the same value using pointer.
+//8.	Write block of code that take an input from the user and display the same value using pointer.
 
 
-//8.	Write a program that asks the user to enter integers as inputs to be stored in the 
+//9.	Write a program that asks the user to enter integers as inputs to be stored in the 
 //variables 'a' and 'b' respectively. There are also two integer pointers named ptrA and ptrB. 
 //Assign the values of 'a' and 'b' to ptrA and ptrB respectively, and display them.
 
 
-//9.	Write a C++ program to accept five integer values from keyword and print the elements 
+//10.	Write a C++ program to accept five integer values from keyword and print the elements 
 //of the array in reverse order using a pointer.
 
 
-//10.	Write a function countEven(int*, int) which receives an integer array and its size, 
+//11.	Write a function countEven(int*, int) which receives an integer array and its size, 
 //and returns the number of even numbers in the array.
 
+#include <iostream>
 
-//11.	Write two functions void cubeByPtr1 ( int * numPtr ) and void cubeByPtr2 ( int & numPtr ) 
-//which returns a cube of a number.
+using namespace std;
 
+int countEven(int *arr, int n){
+    int counter = 0;
+    for(int i=0; i<n; i++){
+        if(arr[i] % 2 == 0){
+            counter++;
+        }
+    }
+    return counter;
+}
+
+int main()
+{
+    int SIZE = 0;
+    int *arr = new int[SIZE];
+
+    cout << "Enter the size of the array: ";
+    cin >> SIZE;
+    cout << "Enter the numbers using space: ";
+
+    for(int i=0; i<SIZE; i++){
+    cin >> arr[i];
+    }
+
+    cout << "\nNo of even no in the given array is: " << countEven(arr, SIZE) << endl;
+
+    return 0;
+}
+
+//12.	Write two functions void cubeByPtr1 ( int * numPtr ) and
+//void cubeByPtr2 ( int & numPtr ) which returns a cube of a number.
+
+#include <iostream>
+
+using namespace std;
+
+int cubeByPtr1(int *numPtr){
+    return (*numPtr) * (*numPtr) * (*numPtr);
+}
+int cubeByPtr2(int &numPtr){
+    return numPtr * numPtr * numPtr;
+}
+
+int main()
+{
+    int num;
+    cout << "Enter a number to get its cube: ";
+    cin >> num;
+    cout << "The result is " << cubeByPtr1(&num)<< endl;
+    cout << "original: " << num << endl;
+    cout << "The result is " << cubeByPtr2(num) << endl;
+    cout << "original:  " << num << endl;
+    return 0;
+}
+//13.	Given the string "A string." Print on one line the letter on the index 0, 
+//the pointer position and the letter t. Update the pointer to pointer +2. 
+//Then, in another line print the pointer and the letters r and g of the string (using the pointer).
 
 
 
