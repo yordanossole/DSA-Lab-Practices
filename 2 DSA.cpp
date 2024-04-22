@@ -83,7 +83,9 @@ int main () {
     return 0;
 }
 /*
-3.	Show how the selection sort algorithm will sort the list: 5, 12, 25, 31, 15, 6, 8, 21. 
-A.	How many comparisons will be required? 
-B.	How many comparisons will be required in case of bubble sort? 
+4.	Write three programs in C++ to find out the minimum and maximum value from the given array using? 
+A.	Insertion sort (2 functions: insertion_max and insertion_min) 
+B.	Selection sort (2 functions: selection_max and selection_min) 
+C.	Bubble sort (2 functions: bubble_max and bubble_min) 
 */
+
