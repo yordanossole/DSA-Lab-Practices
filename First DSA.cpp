@@ -25,7 +25,6 @@ int counter (int arr[]) {
     return counter;
 }
 
-using namespace std;
 int main(){
     cout << "Enter 10 integers: " << endl;
     cout << "There are " << counter(receiveInput()) << " numbers greater than or equal to 10." << endl;
@@ -274,12 +273,45 @@ int main() {
 //9.	Write a program that asks the user to enter integers as inputs to be stored in the 
 //variables 'a' and 'b' respectively. There are also two integer pointers named ptrA and ptrB. 
 //Assign the values of 'a' and 'b' to ptrA and ptrB respectively, and display them.
+#include <iostream>
 
+using namespace std;
 
+int main() {
+    int a = 0;
+    int b= 0;
+    int *ptrA = &a;
+    int *ptrB = &b;
+
+    cout << "Enter two numbers (using space): ";
+    cin >> a >> b;
+    cout << *ptrA << " " << *ptrB << endl;
+
+    return 0;
+}
 
 //10.	Write a C++ program to accept five integer values from keyword and print the elements 
 //of the array in reverse order using a pointer.
 
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int arr[5];
+    cout << "Enter 5 numbers using space: ";
+    for(int i=0; i<5; i++)
+        cin >> arr[i];
+
+    cout << endl;
+    int *ptr = arr;
+    ptr += 4;
+    cout << "The list in reverse order: ";
+    for(int i=0; i<5; i++){
+        cout << *(ptr - i) << " ";
+    }
+    return 0;
+}
 
 //11.	Write a function countEven(int*, int) which receives an integer array and its size, 
 //and returns the number of even numbers in the array.
@@ -344,8 +376,21 @@ int main()
 //13.	Given the string "A string." Print on one line the letter on the index 0, 
 //the pointer position and the letter t. Update the pointer to pointer +2. 
 //Then, in another line print the pointer and the letters r and g of the string (using the pointer).
+#include <iostream>
 
+using namespace std;
 
+int main()
+{
+   char str[] = "A string.";
+   char *ptr = str;
+
+   cout << str[0] <<' '<< *ptr <<' '<<ptr[3]<<"\n";
+   ptr += 2;
+   cout <<*ptr<<' '<< ptr[2] <<' '<< ptr[5];
+
+   return 0;
+}
 
 
 
