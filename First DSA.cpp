@@ -230,18 +230,51 @@ int main() {
 
 
 /*
-7.	Write a program that asks for an index and a number. Then it includes the number 
-at the indicated index of the array ={1,2,3,4,5,6} and moves a position forward 
-(from u to u+1) each element after the selected index.
+7. Write a program that asks for an index and a number. Then it includes the number at the
+indicated index of the array ={1,2,3,4,5,6} and moves a position forward (from u to u+1) each
+element after the selected index.
 */
+#include <iostream>
+
+using namespace std;
+
+void insertItem (int arr[], int index, int num){
+    int len = sizeof(arr) / sizeof(arr[0]);
+
+    if (index >= 0 && index < len) {
+        for(int i=len-1; i>index; i--)
+            arr[i] = arr[i-1];
+    }
+    arr[index] = num;
+}
+int main(){
+    int arr[6] = {1,2,3,4,5,6};
+    insertItem(arr, 3, 10);
+    for (int i=0; i<6; i++)
+        cout << arr[i] << " ";
+
+    return 0;
+}
 
 //Pointer Exercise
 //8.	Write block of code that take an input from the user and display the same value using pointer.
+#include <iostream>
 
+using namespace std;
+
+int main() {
+    int a = 0;
+    int *num = &a;
+    cout << "Enter a number: ";
+    cin >> *num;
+    cout << "You entered: " << *num;
+    return 0;
+}
 
 //9.	Write a program that asks the user to enter integers as inputs to be stored in the 
 //variables 'a' and 'b' respectively. There are also two integer pointers named ptrA and ptrB. 
 //Assign the values of 'a' and 'b' to ptrA and ptrB respectively, and display them.
+
 
 
 //10.	Write a C++ program to accept five integer values from keyword and print the elements 
