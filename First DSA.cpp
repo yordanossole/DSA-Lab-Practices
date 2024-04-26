@@ -5,22 +5,30 @@
 #include <conio.h>
 
 using namespace std;
-int main(){
-    int arr[10];
-    cout << "Enter the 10 integers: " << endl;
-    int counter = 0;
 
+int *receiveInput () {
+    int *arr = new int[10];
     for(int i=0; i<10; i++){
         cout << "Enter the " << i+1 << " number: ";
         cin >> arr[i];
         system("cls");
     }
+    return arr;
+}
+int counter (int arr[]) {
+    int counter = 0;
     for(int i=0; i<10; i++){
         if(arr[i]>=10){
             counter++;
         }
     }
-    cout << "There are " << counter << " numbers greater than or equal to 10." << endl;
+    return counter;
+}
+
+using namespace std;
+int main(){
+    cout << "Enter 10 integers: " << endl;
+    cout << "There are " << counter(receiveInput()) << " numbers greater than or equal to 10." << endl;
   return 0;
 }
 //2.	Suppose you want to keep track of your books in a library. You might want to track the following 
@@ -58,7 +66,7 @@ int main()
     }
     return 0;
 }
-//33.	Write a program which takes 2 arrays of 4 integers each, a and b. C is an array with 8 integers. 
+//3.	Write a program which takes 2 arrays of 4 integers each, a and b. C is an array with 8 integers. 
 //The program should put into c the appending of b to a, the first 4 integers of c from array a, 
 //the latter 4 from b. Then the program should display c.
 #include <iostream>
@@ -79,7 +87,6 @@ int main()
         c[i] = a[i];
         c[i+4] = b[i];
         system("cls");
-        
     }
 
     cout << "\nThe elements of c which is a + b: " ;
@@ -168,7 +175,7 @@ int main()
 }
 
 /*5.	Write a program that will ask the user to input three integer values
-from the keyboard. Then it will print the smallest and largest of those numbers
+from the keyboard. Then it will print the smallest and largest of those numbers.
 */
 #include <iostream>
 
@@ -197,9 +204,29 @@ int main()
     return 0;
 }
 /*
-6.	Write a C++ program to pass an array containing age of person to a function. 
+6.	Write a C++ program to pass an array containing age of person to a function.
 This function should find average age and display the average age in main function.
 */
+#include <iostream>
+
+using namespace std;
+
+int avgAge(int arr[], int len){
+    int sum = 0;
+    int avg = 0;
+    for (int i=0; i<len; i++) {
+        sum += arr[i];
+    }
+    avg = sum/len;
+    return avg;
+}
+
+int main() {
+    int age[10] = {21, 55, 23, 45, 30, 29, 26, 28, 31, 24};
+    int avg = avgAge(age, 10);
+    cout << "Average age is: " << avg << endl;
+    return 0;
+}
 
 
 /*
